@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Guess-Me</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="lib/bootstrap.css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="img/layout/akinator.png" />
+      <h1>Genius Genie</h1>
+    </header>
+
+    <main>
+      <section class="game-start">
+        <h2 class="my-4">Think of Someone...</h2>
+        <button class="btn btn-primary btn-start">I'm Ready!</button>
+      </section>
+
+      <section class="quest" style="display: none">
+        <h2 class="my-4"></h2>
+        <button class="btn btn-success btn-yes">Yes</button>
+        <button class="btn btn-danger btn-no">No</button>
+      </section>
+      <!-- Vertically centered modal -->
+      <div class="victory modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Yay!, I knew it! 🤑.</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lose modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>I am clueless, Help me learn!</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="new-quest" style="display: none">
+        <h2 class="my-5">OK, I gave up...</h2>
+
+        <form class="ending-form">
+          <label for="newGuess">You thought of: </label>
+          <input
+            name="newGuess"
+            type="txt"
+            id="newGuess"
+            placeholder="Your Guess"
+            required
+          />
+
+          <label for="newQuest">Question to differentiate:</label>
+          <input
+            name="newQuest"
+            type="txt"
+            id="newQuest"
+            placeholder="The answer is YES for yours"
+            required
+          />
+
+          <button type="submit" class="btn btn-success btn-add-guess">
+            Make me Smarter!
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer>CoffeeRights &copy; 2021</footer>
+
+    <script src="js/quest.storage.service.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap.bundle.js"></script>
+    <script src="js/quest-service.js"></script>
+    <script src="js/quest-controller.js"></script>
+  </body>
+</html>
